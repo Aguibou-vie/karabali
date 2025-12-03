@@ -44,7 +44,7 @@ include __DIR__ . "/includes/header.php";
                 <!-- bloc image hero (utilise une de tes photos) -->
                 <div class="hero-image-card">
                     <div class="ratio ratio-4x3 rounded-4 overflow-hidden hero-image-border">
-                        <img src="assets/img/oo.jpg"
+                        <img src="assets/img/aa.jpeg"
                             class="w-100 h-100 object-fit-cover"
                             alt="Soiree Espacio-Karabaly">
                     </div>
