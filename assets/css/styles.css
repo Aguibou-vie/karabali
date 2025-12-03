@@ -1,0 +1,192 @@
+:root {
+    --kara-bg: #020617;            /* fond principal */
+    --kara-bg-soft: #030712;       /* fond secondaire */
+    --kara-accent: #c58722;        /* vert principal */
+    --kara-accent-soft: #033a0a;   /* vert-jaune lime */
+    --kara-text: #f5d001;
+}
+body {
+    background-color: yellowgreen;
+}
+
+/* boutons accent vert */
+.btn-accent,
+.btn-warning {
+    background-color: var(--kara-accent);
+    border-color: var(--kara-accent);
+    color: #020617;
+}
+
+.btn-accent:hover,
+.btn-warning:hover {
+    filter: brightness(1.05);
+    color: #020617;
+}
+
+.btn-outline-accent,
+.btn-outline-warning {
+    border-color: var(--kara-accent-soft);
+    color: var(--kara-accent-soft);
+}
+
+.btn-outline-accent:hover,
+.btn-outline-warning:hover {
+    background-color: var(--kara-accent-soft);
+    border-color: var(--kara-accent-soft);
+    color: #020617;
+}
+
+.text-accent,
+.text-warning {
+    color: var(--kara-accent-soft) !important;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background-color: var(--kara-bg);
+    color: var(--kara-text);
+}
+
+/* navbar */
+.navbar {
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.logo-navbar {
+    height: 32px;
+    width: 32px;
+    object-fit: cover;
+    border-radius: 999px;
+}
+
+/* hero avec video + vibes nature */
+/* hero avec photo de fond */
+.hero-section {
+    min-height: 100vh;
+    background-image: url("../img/oo.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* filtre sombre pour rendre le texte lisible */
+.hero-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55); /* tu peux augmenter si l’image est trop lumineuse */
+    backdrop-filter: blur(2px);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 5;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.hero-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.3;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(0, 0, 0, 0.25), rgba(2, 6, 23, 0.96));
+}
+
+.hero-content {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+/* carte image hero */
+.hero-image-card {
+    max-width: 420px;
+    margin-left: auto;
+}
+
+.hero-image-border {
+    border: 1px solid rgba(190, 242, 100, 0.5);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+}
+
+/* badge vert-jaune */
+.bg-accent-soft {
+    background-color: var(--kara-accent-soft) !important;
+}
+
+/* sections */
+.bg-dark-soft {
+    background-color: var(--kara-bg-soft);
+}
+
+/* images */
+.object-fit-cover {
+    object-fit: cover;
+}
+
+/* cards gallery */
+.gallery-card {
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.gallery-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+}
+
+/* bouton WhatsApp flottant */
+.whatsapp-float {
+    position: fixed;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    background: var(--kara-accent);
+    color: #020617;
+    padding: 0.7rem 1rem;
+    border-radius: 999px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    z-index: 1000;
+}
+
+.whatsapp-float:hover {
+    text-decoration: none;
+    filter: brightness(1.05);
+}
+
+/* responsive hero */
+@media (max-width: 767.98px) {
+    .hero-content {
+        padding-top: 6rem;
+        padding-bottom: 4rem;
+    }
+
+    .hero-image-card {
+        margin-left: 0;
+        margin-top: 1.5rem;
+    }
+}
+
+.text-espacio {
+    color: #f8850200 !important; /* jaune-vert ou autre */
+}
+
+.modu {
+    color: #c58722;    
+}

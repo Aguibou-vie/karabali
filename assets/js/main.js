@@ -5,6 +5,7 @@ window.addEventListener("scroll", () => {
 
     if (window.scrollY > 40) {
     nav.classList.add("bg-dark", "shadow-sm");
-} else {    nav.classList.remove("bg-dark", "shadow-sm");
+    } else {
+    nav.classList.remove("bg-dark", "shadow-sm");
     }
 });
