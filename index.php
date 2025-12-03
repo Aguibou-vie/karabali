@@ -16,18 +16,18 @@ include __DIR__ . "/includes/header.php";
                     Afrobeat · Amapiano · Afrohouse · Culture
                 </span>
 
-                <h1 class="display-4 fw-bold mb-3">
+                <h1 class="display-4 fw-bold mb-3 hero-title">
                     <span class="text-espacio">Espacio</span>
                     <span class="modu">Makeda</span>
                 </h1>
 
-                <p class="lead text-hero mb-4">
+                <p class="lead text-hero mb-4 hero-lead">
                     Espace afro moderne à Vigo : musique, danse, style et culture.  
                     Un lieu pour la communauté africaine, les jeunes espagnols, Erasmus
                     et tous les amoureux des vibes afro.
                 </p>
 
-                <div class="d-flex flex-wrap gap-3 mb-4">
+                <div class="d-flex flex-wrap gap-3 mb-4 hero-buttons">
                     <a href="market-tikects.php" class="btn btn-accent btn-lg">
                         Acheter un billet
                     </a>
@@ -36,7 +36,7 @@ include __DIR__ . "/includes/header.php";
                     </a>
                 </div>
 
-                <p class="small text-hero-muted mb-0">
+                <p class="small text-hero-muted mb-0 hero-small">
                     Prochaines dates, thèmes et dress code sur nos réseaux sociaux.
                 </p>
             </div>
@@ -46,17 +46,18 @@ include __DIR__ . "/includes/header.php";
                 <div class="hero-image-card">
                     <div class="ratio ratio-4x3 rounded-4 overflow-hidden hero-image-border position-relative">
                         <img id="hero-event-photo"
-                            src="assets/img/bg0.jpg"
+                            src="assets/img/event1.jpg"
                             class="w-100 h-100 object-fit-cover"
                             alt="Soirée Espacio Makeda">
 
                         <!-- badge en haut -->
                         <div class="hero-event-badge">
-                            Évènement à venir
+                            Prochaine soirée
                         </div>
 
                         <!-- texte en bas sur l'image -->
                         <div class="hero-event-info">
+                            <p class="hero-event-tag mb-1">Afro · Amapiano · Vibes only</p>
                             <h3 id="hero-event-title" class="h5 mb-1">Afro Sunset Party</h3>
                             <p id="hero-event-subtitle" class="small mb-0">
                                 Samedi 21 Décembre · Makeda, Vigo
@@ -65,8 +66,7 @@ include __DIR__ . "/includes/header.php";
                     </div>
 
                     <p class="small text-muted mt-2 mb-0">
-                        Afro vibes à Vigo : afrobeat, amapiano, looks inspirés de la nature
-                        et de la culture africaine.
+                        Ramène ta meilleure énergie, ton meilleur look et on s’occupe du reste.
                     </p>
                 </div>
             </div>
@@ -100,7 +100,7 @@ include __DIR__ . "/includes/header.php";
                 <div class="home-card h-100">
                     <h3 class="h5 mb-2">Gallery & Hall of Fame</h3>
                     <p class="small mb-3">
-                        Revois les meilleures photos de chaque soirée et les meilleurs looks.
+                        Revois les meilleurs moments, les meilleurs looks et les vibes des soirées.
                     </p>
                     <a href="gallery.php" class="btn btn-accent btn-sm me-2 mb-2">
                         Gallery
@@ -131,10 +131,18 @@ include __DIR__ . "/includes/header.php";
     </div>
 </section>
 
-<!-- BOUTON WHATSAPP FLOTTANT -->
-<a href="https://wa.me/34XXXXXXXXX" target="_blank" class="whatsapp-float">
-    <span>WhatsApp</span>
-</a>
+<!-- ICÔNES RÉSEAUX FLOTTANTES -->
+<div class="social-float">
+    <a href="https://wa.me/34XXXXXXXXX" target="_blank" class="social-btn whatsapp">
+        <i class="bi bi-whatsapp"></i>
+    </a>
+    <a href="https://instagram.com/TON_INSTAGRAM" target="_blank" class="social-btn instagram">
+        <i class="bi bi-instagram"></i>
+    </a>
+    <a href="https://tiktok.com/@TON_TIKTOK" target="_blank" class="social-btn tiktok">
+        <i class="bi bi-tiktok"></i>
+    </a>
+</div>
 
 <!-- SCRIPTS POUR ANIMATIONS (fond + évènements) -->
 <script>

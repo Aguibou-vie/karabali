@@ -1,69 +1,112 @@
+/* ========== VARIABLES GLOBALES ========== */
 :root {
-    --kara-bg: #020617;            /* fond principal */
+    --kara-bg: #020617;            /* fond principal (très sombre) */
     --kara-bg-soft: #030712;       /* fond secondaire */
-    --kara-accent: #c58722;        /* vert principal */
-    --kara-accent-soft: #aaf0b3;   /* vert-jaune lime */
-    --kara-text: #f5d001;
-}
-body {
-    background-color: yellowgreen;
+    --kara-accent: #c58722;        /* doré / orange */
+    --kara-accent-soft: #f5d001;   /* jaune lumineux */
+    --kara-text: #f9fafb;          /* texte principal clair */
 }
 
-/* boutons accent vert */
+/* ========== BASE ========== */
+
+body {
+    background-color: var(--kara-bg);
+    color: var(--kara-text);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    margin: 0;
+}
+
+a {
+    color: var(--kara-accent-soft);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* au cas où Bootstrap n'a pas cette classe */
+.object-fit-cover {
+    object-fit: cover;
+}
+
+/* ========== NAVBAR (menu du haut) ========== */
+
+.navbar {
+    background: #020617 !important; /* plein, pas transparent */
+    border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+}
+
+.navbar .navbar-brand {
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: #f9fafb !important;
+}
+
+.navbar .nav-link {
+    color: #d1d5db !important;
+    font-weight: 500;
+    padding: 0.5rem 0.9rem;
+    position: relative;
+}
+
+.navbar .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0.9rem;
+    right: 0.9rem;
+    bottom: 0.2rem;
+    height: 2px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--kara-accent-soft), var(--kara-accent));
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.2s ease-out;
+}
+
+.navbar .nav-link:hover::after,
+.navbar .nav-link.active::after {
+    transform: scaleX(1);
+}
+
+/* ========== BOUTONS ========== */
+
 .btn-accent,
 .btn-warning {
     background-color: var(--kara-accent);
     border-color: var(--kara-accent);
     color: #020617;
+    font-weight: 600;
+    border-radius: 999px;
+    padding-inline: 1.5rem;
 }
 
 .btn-accent:hover,
 .btn-warning:hover {
-    filter: brightness(1.05);
+    background-color: #eab308;
+    border-color: #eab308;
     color: #020617;
 }
 
-.btn-outline-accent,
-.btn-outline-warning {
-    border-color: var(--kara-accent-soft);
-    color: var(--kara-accent-soft);
-}
-
-.btn-outline-accent:hover,
-.btn-outline-warning:hover {
-    background-color: var(--kara-accent-soft);
-    border-color: var(--kara-accent-soft);
-    color: #020617;
-}
-
-.text-accent,
-.text-warning {
-    color: var(--kara-accent-soft) !important;
-}
-
-body {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    background-color: var(--kara-bg);
-    color: var(--kara-text);
-}
-
-/* navbar */
-.navbar {
-    transition: background-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-.logo-navbar {
-    height: 32px;
-    width: 32px;
-    object-fit: cover;
+.btn-outline-accent {
     border-radius: 999px;
+    border: 1px solid var(--kara-accent);
+    color: #f9fafb;
+    font-weight: 500;
+    padding-inline: 1.3rem;
+    background-color: transparent;
 }
 
-/* hero avec video + vibes nature */
-/* hero avec photo de fond */
+.btn-outline-accent:hover {
+    background-color: var(--kara-accent);
+    color: #020617;
+}
+
+/* ========== HERO ========== */
+
 .hero-section {
     min-height: 100vh;
-    background-image: url("../img/bg0.jpg");
+    background-image: url("../img/bg0.jpg"); /* image de base */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -72,121 +115,211 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+
+    padding-top: 5rem; /* pour ne pas coller au menu */
+    padding-bottom: 3rem;
+
+    transition: background-image 1s ease-in-out;
 }
 
-/* filtre sombre pour rendre le texte lisible */
-.hero-section::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.55); /* tu peux augmenter si l’image est trop lumineuse */
-    backdrop-filter: blur(2px);
-}
-
-.hero-content {
-    position: relative;
-    z-index: 5;
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-}
-
-.hero-video {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.3;
-}
-
+/* overlay sombre sur l'image de fond */
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at center, rgba(0, 0, 0, 0.25), rgba(2, 6, 23, 0.96));
+    background: radial-gradient(circle at top, rgba(56, 189, 248, 0.25), transparent 55%),
+                linear-gradient(to bottom, rgba(15, 23, 42, 0.96), rgba(15, 23, 42, 0.96));
+    z-index: 0;
 }
 
-.hero-content {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+.hero-section > .container {
+    position: relative;
+    z-index: 1;
 }
 
-/* carte image hero */
+/* badge au-dessus du titre */
+.hero-badge {
+    background: rgba(15, 23, 42, 0.9);
+    border-radius: 999px;
+    border: 1px solid rgba(148, 163, 184, 0.6);
+    color: #e5e7eb;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+}
+
+/* texte hero */
+.text-hero {
+    color: #e5e7eb;
+}
+
+.text-hero-muted {
+    color: #9ca3af;
+}
+
+/* titre Espacio Makeda */
+.text-espacio {
+    color: #f5d001 !important;  /* joli jaune */
+}
+
+.modu {
+    color: #c58722;
+}
+
+/* animations d'apparition */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-title {
+    animation: fadeUp 0.7s ease-out 0.1s both;
+}
+
+.hero-lead {
+    animation: fadeUp 0.7s ease-out 0.25s both;
+}
+
+.hero-buttons {
+    animation: fadeUp 0.7s ease-out 0.4s both;
+}
+
+.hero-small {
+    animation: fadeUp 0.7s ease-out 0.55s both;
+}
+
+/* bloc image droite */
 .hero-image-card {
     max-width: 420px;
     margin-left: auto;
+    background: transparent;
+    animation: floatCard 4s ease-in-out infinite;
+}
+
+@keyframes floatCard {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-8px); }
+    100% { transform: translateY(0); }
 }
 
 .hero-image-border {
-    border: 1px solid rgba(190, 242, 100, 0.5);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
 }
 
-/* badge vert-jaune */
-.bg-accent-soft {
-    background-color: var(--kara-accent-soft) !important;
-}
-
-/* sections */
-.bg-dark-soft {
-    background-color: var(--kara-bg-soft);
-}
-
-/* images */
-.object-fit-cover {
-    object-fit: cover;
-}
-
-/* cards gallery */
-.gallery-card {
-    cursor: pointer;
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
-
-.gallery-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
-}
-
-/* bouton WhatsApp flottant */
-.whatsapp-float {
-    position: fixed;
-    right: 1.5rem;
-    bottom: 1.5rem;
-    background: var(--kara-accent);
-    color: #020617;
-    padding: 0.7rem 1rem;
+/* badge "Prochaine soirée" */
+.hero-event-badge {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    padding: 0.35rem 0.9rem;
     border-radius: 999px;
-    font-weight: 600;
-    text-decoration: none;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    background: linear-gradient(135deg, #22c55e, #f5d001);
+    color: #020617;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+/* texte en bas de l'image */
+.hero-event-info {
+    position: absolute;
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    padding: 0.8rem 1rem;
+    border-radius: 0.9rem;
+    background: linear-gradient(
+        135deg,
+        rgba(15, 23, 42, 0.95),
+        rgba(30, 64, 175, 0.9)
+    );
+    color: #f9fafb;
+}
+
+.hero-event-tag {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: #a5b4fc;
+}
+
+/* ========== SECTION CARTES LIENS ========== */
+
+.home-links-section {
+    background: radial-gradient(circle at top, rgba(55, 65, 81, 0.4), transparent 55%),
+                linear-gradient(to bottom, #020617, #020617);
+}
+
+.home-card {
+    background: rgba(15, 23, 42, 0.96);
+    border-radius: 1.2rem;
+    padding: 1.5rem;
+    border: 1px solid rgba(148, 163, 184, 0.25);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+}
+
+/* ========== ICÔNES RÉSEAUX FLOTTANTES ========== */
+
+.social-float {
+    position: fixed;
+    right: 1.2rem;
+    bottom: 1.2rem;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.social-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 999px;
     display: inline-flex;
     align-items: center;
-    gap: 0.4rem;
-    z-index: 1000;
-}
-
-.whatsapp-float:hover {
+    justify-content: center;
+    font-size: 1.4rem;
+    color: #020617;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
     text-decoration: none;
-    filter: brightness(1.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
 }
 
-/* responsive hero */
-@media (max-width: 767.98px) {
-    .hero-content {
+.social-btn:hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.8);
+    text-decoration: none;
+}
+
+/* couleurs */
+.social-btn.whatsapp {
+    background: #22c55e;
+}
+
+.social-btn.instagram {
+    background: radial-gradient(circle at 30% 30%, #fdf497 0, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+
+.social-btn.tiktok {
+    background: #111827;
+    color: #f9fafb;
+}
+
+/* ========== RESPONSIVE ========== */
+
+@media (max-width: 991.98px) {
+    .hero-section {
         padding-top: 6rem;
-        padding-bottom: 4rem;
+        padding-bottom: 3rem;
     }
 
     .hero-image-card {
         margin-left: 0;
         margin-top: 1.5rem;
     }
-}
-
-.text-espacio {
-    color: #f8850200 !important; /* jaune-vert ou autre */
-}
-
-.modu {
-    color: #c58722;    
 }
