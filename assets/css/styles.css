@@ -2,7 +2,7 @@
     --kara-bg: #020617;            /* fond principal */
     --kara-bg-soft: #030712;       /* fond secondaire */
     --kara-accent: #c58722;        /* vert principal */
-    --kara-accent-soft: #033a0a;   /* vert-jaune lime */
+    --kara-accent-soft: #aaf0b3;   /* vert-jaune lime */
     --kara-text: #f5d001;
 }
 body {
@@ -63,7 +63,7 @@ body {
 /* hero avec photo de fond */
 .hero-section {
     min-height: 100vh;
-    background-image: url("../img/aa.jpeg");
+    background-image: url("../img/bg0.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

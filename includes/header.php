@@ -20,7 +20,7 @@ $pageTitle = $pageTitle ?? "Afro Experience";
     <div class="container">
         <a class="navbar-brand d-flex align-items-center fw-bold" href="index.php">
             <!-- logo (image a mettre dans assets/img/logo.png) -->
-            <img src="assets/img/xx.png" alt="" class="logo-navbar me-2">
+            <img src="assets/img/vv.png" alt="" class="logo-navbar me-2">
             <span class="text-accent">Makeda</span>
 
         </a>

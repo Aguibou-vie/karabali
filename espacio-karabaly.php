@@ -49,7 +49,7 @@ include __DIR__ . "/includes/header.php";
                             <div class="mb-3">
                                 <label class="form-label">Message</label>
                                 <textarea name="message" rows="4" class="form-control"
-                                          placeholder="Partage une idee, un ressenti, une suggestion..."></textarea>
+                                        placeholder="Partage une idee, un ressenti, une suggestion..."></textarea>
                             </div>
                             <button type="submit" class="btn btn-accent w-100">
                                 Envoyer
