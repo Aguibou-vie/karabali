@@ -29,10 +29,10 @@ if (!isset($pageTitle)) {
 
         <!-- LOGO -->
         <a class="navbar-brand d-flex align-items-center" href="index.php">
-            <img src="assets/img/logo.png" 
-                 alt="Makeda Logo"
-                 class="rounded-circle me-2"
-                 style="width:40px; height:40px; object-fit:cover;">
+            <img src="assets/img/logo2.png" 
+                alt="Makeda Logo"
+                class="rounded-circle me-2"
+                style="width:40px; height:40px; object-fit:cover;">
             <span class="fw-bold">Makeda</span>
         </a>
 
