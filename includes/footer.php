@@ -11,10 +11,11 @@
         </div>
     </footer>
 
-    <!-- bouton WhatsApp flottant (numero a changer) -->
+    <!-- bouton WhatsApp flottant (numero a changer) 
     <a href="https://wa.me/34123456789" class="whatsapp-float" target="_blank" rel="noopener">
         <span>WhatsApp</span>
     </a>
+    -->
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
