@@ -18,7 +18,7 @@ include __DIR__ . "/includes/header.php";
 
                 <h1 class="display-4 fw-bold mb-3 hero-title">
                     <span class="text-espacio">Espacio</span>
-                    <span class="modu">Makeda</span>
+                    <span class="modu">Karabali</span>
                 </h1>
 
                 <p class="lead text-hero mb-4 hero-lead">

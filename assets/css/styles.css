@@ -83,7 +83,7 @@ a:hover {
 
 .btn-accent:hover,
 .btn-warning:hover {
-    background-color: #eab308;
+    background-color: #278941;
     border-color: #eab308;
     color: #020617;
 }
@@ -122,14 +122,27 @@ a:hover {
     transition: background-image 1s ease-in-out;
 }
 
-/* overlay sombre sur l'image de fond */
+/* overlay sombre sur l'image de fond 
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at top, rgba(56, 189, 248, 0.25), transparent 55%),
+    background: radial-gradient(circle at top, rgba(56, 189, 248, 0.25), transparent 50%),
                 linear-gradient(to bottom, rgba(15, 23, 42, 0.96), rgba(15, 23, 42, 0.96));
     z-index: 0;
 }
+    */
+
+/**/
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(183, 139, 63, 0.55),
+        rgba(10, 20, 40, 0.80)
+    );
+}
+
 
 .hero-section > .container {
     position: relative;
@@ -227,20 +240,22 @@ a:hover {
 }
 
 /* texte en bas de l'image */
+/* bandeau texte en bas de la photo (laisser la photo bien visible) */
 .hero-event-info {
     position: absolute;
-    left: 1rem;
-    right: 1rem;
-    bottom: 1rem;
-    padding: 0.8rem 1rem;
-    border-radius: 0.9rem;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0.9rem 1.3rem;
+    border-radius: 0 0 1.2rem 1.2rem; /* arrondi seulement en bas */
     background: linear-gradient(
-        135deg,
-        rgba(15, 23, 42, 0.95),
-        rgba(30, 64, 175, 0.9)
+        to top,
+        rgba(0, 0, 0, 0.85),
+        rgba(0, 0, 0, 0.15)
     );
     color: #f9fafb;
 }
+
 
 .hero-event-tag {
     font-size: 0.7rem;

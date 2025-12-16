@@ -28,8 +28,8 @@ include __DIR__ . "/includes/header.php";
         <div class="row g-4">
             <?php
             $products = [
-                ["Boubou Royal Karabaly", "assets/img/products/boubou1.jpg", "Tenue afro chic pour soirees premium.", "45€"],
-                ["Collier Masque Ancien", "assets/img/products/collier1.jpg", "Bijou inspire des masques africains.", "20€"],
+                ["Boubou Royal Karabaly", "assets/img/event2.jpg", "Tenue afro chic pour soirees premium.", "45€"],
+                ["Collier Masque Ancien", "assets/img/modu.jpg", "Bijou inspire des masques africains.", "20€"],
                 ["Eventail Afro Pirate", "assets/img/products/eventail1.jpg", "Accessoire pour les soirees Afro Pirate.", "15€"],
                 ["Tshirt Amapiano Galaxy", "assets/img/products/tshirt1.jpg", "Style streetwear avec vibes neon.", "25€"],
             ];

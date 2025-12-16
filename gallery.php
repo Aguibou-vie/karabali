@@ -14,12 +14,12 @@ include __DIR__ . "/includes/header.php";
             <?php
             // liste d images demo (a remplacer par tes vraies images)
             $images = [
-                ["assets/img/1.jpg", "Karabaly Night #1"],
-                ["assets/img/2.jpg", "Karabaly Night #2"],
-                ["assets/img/3.jpg", "Afro Pirate Night"],
-                ["assets/img/2.jpg", "Amapiano Galaxy"],
-                ["assets/img/events/event5.jpg", "Kirikou & Karabaly"],
-                ["assets/img/events/event6.jpg", "Afro Culture Experience"],
+                ["assets/img/bg0.jpg", "Karabaly Night "],
+                ["assets/img/bg1.jpg", "Karabaly Night"],
+                ["assets/img/bg2.jpg", "Afro Pirate Night"],
+                ["assets/img/bg3.jpg", "Amapiano Galaxy"],
+                ["assets/img/event1.jpg", "Kirikou & Karabaly"],
+                ["assets/img/event2.jpg", "Afro Culture Experience"],
             ];
             foreach ($images as $index => $img):
                 $idModal = "photoModal" . $index;
